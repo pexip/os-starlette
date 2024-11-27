@@ -1,0 +1,72 @@
+Source: starlette
+Section: python
+Priority: optional
+Maintainer: Piotr Ożarowski <piotr@debian.org>
+Uploaders: Debian Python Team <team+python@tracker.debian.org>
+Build-Depends: debhelper-compat (= 13),
+               pybuild-plugin-pyproject,
+               python3-all,
+	       python3-hatchling,
+               python3-setuptools,
+               python3-pytest <!nocheck>,
+               python3-aiofiles <!nocheck>,
+               python3-anyio <!nocheck>,
+               python3-h11 <!nocheck>,
+               python3-httpx (>= 0.22.0) <!nocheck>,
+               python3-itsdangerous <!nocheck>,
+               python3-jinja2 <!nocheck>,
+               python3-multipart (<< 0.1) | python3-python-multipart <!nocheck>,
+               python3-trio <!nocheck>,
+               python3-typing-extensions <!nocheck>,
+               python3-uvicorn | python3-daphne <!nocheck>,
+               python3-yaml <!nocheck>,
+Standards-Version: 4.6.1
+Homepage: https://www.starlette.io/
+Vcs-Git: https://salsa.debian.org/python-team/packages/starlette.git
+Vcs-Browser: https://salsa.debian.org/python-team/packages/starlette
+Testsuite: autopkgtest-pkg-pybuild
+
+Package: python3-starlette
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends},
+Recommends: ${python3:Recommends},
+ python3-uvicorn | python3-daphne,
+ python3-aiofiles,
+ python3-h11,
+ python3-itsdangerous,
+ python3-jinja2,
+ python3-multipart (<< 0.1) | python3-python-multipart,
+ python3-yaml,
+Suggests: ${python3:Suggests},
+ python3-databases,
+Breaks: python3-fastapi (<< 0.91.0-1~)
+Description: ASGI library ideal for building high performance asyncio services
+ Starlette is a lightweight ASGI (Asynchronous Server Gateway Interface)
+ framework/toolkit, which is ideal for building high performance asyncio
+ services.
+ .
+ It is production-ready, and gives you the following:
+ .
+  * Seriously impressive performance.
+  * WebSocket support.
+  * In-process background tasks.
+  * Startup and shutdown events.
+  * Test client built on `httpx`.
+  * CORS, GZip, Static Files, Streaming responses.
+  * Session and Cookie support.
+  * 100% test coverage.
+  * 100% type annotated codebase.
+  * Zero hard dependencies.
+ .
+ Example:
+ .
+  from starlette.applications import Starlette
+  from starlette.responses import JSONResponse
+  from starlette.routing import Route
+ .
+  async def homepage(request):
+      return JSONResponse({'hello': 'world'})
+ .
+  app = Starlette(debug=True, routes=[
+    Route('/', homepage),
+  ])

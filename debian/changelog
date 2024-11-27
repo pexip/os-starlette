@@ -1,0 +1,196 @@
+starlette (0.41.3-2) unstable; urgency=medium
+
+  * Team upload.
+  * Accept renamed python3-python-multipart (see #1085728).
+
+ -- Colin Watson <cjwatson@debian.org>  Wed, 27 Nov 2024 20:22:41 +0000
+
+starlette (0.41.3-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Thu, 21 Nov 2024 14:43:08 +0100
+
+starlette (0.41.2-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Tue, 29 Oct 2024 12:13:35 +0100
+
+starlette (0.41.0-1) unstable; urgency=high
+
+  * New upstream release
+    - fixes CVE-2024-47874 (closes: 1085295)
+
+ -- Piotr Ożarowski <piotr@debian.org>  Fri, 18 Oct 2024 09:00:46 +0200
+
+starlette (0.39.2-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Tue, 01 Oct 2024 16:06:05 +0200
+
+starlette (0.39.1-1) unstable; urgency=medium
+
+  * New upstream release
+    - builds with Python 3.13 (closes: 1082318)
+
+ -- Piotr Ożarowski <piotr@debian.org>  Fri, 27 Sep 2024 15:35:22 +0200
+
+starlette (0.38.2-1) unstable; urgency=medium
+
+  * New upstream release
+    - fixes python-anyio FTBFS (closes: 1077384)
+
+ -- Piotr Ożarowski <piotr@debian.org>  Wed, 14 Aug 2024 13:46:53 +0200
+
+starlette (0.37.2-1) unstable; urgency=medium
+
+  * New upstream release
+    - closes: 1067372 (FTBFS)
+
+ -- Piotr Ożarowski <piotr@debian.org>  Wed, 17 Apr 2024 23:49:19 +0200
+
+starlette (0.37.1-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Mon, 12 Feb 2024 10:24:26 +0100
+
+starlette (0.34.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Sun, 17 Dec 2023 15:06:23 +0100
+
+starlette (0.31.1-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Wed, 20 Sep 2023 12:09:50 +0200
+
+starlette (0.30.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Fri, 21 Jul 2023 13:56:00 +0200
+
+starlette (0.28.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Thu, 22 Jun 2023 14:24:07 +0200
+
+starlette (0.26.1-1) unstable; urgency=medium
+
+  * New upstream release
+  * Set Testsuite: autopkgtest-pkg-pybuild
+
+ -- Piotr Ożarowski <piotr@debian.org>  Sat, 01 Apr 2023 15:33:33 +0200
+
+starlette (0.25.0-2) unstable; urgency=medium
+
+  * Breaks: python3-fastapi (<< 0.91.0-1~) closes: 1031898
+
+ -- Piotr Ożarowski <piotr@debian.org>  Fri, 24 Feb 2023 22:14:04 +0100
+
+starlette (0.25.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Fri, 17 Feb 2023 14:04:31 +0100
+
+starlette (0.24.0-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Thu, 09 Feb 2023 15:32:29 +0100
+
+starlette (0.23.1-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 12 to 13.
+  * Update standards version to 4.6.1, no changes needed.
+  * Remove constraints unnecessary since buster (oldstable):
+    + Build-Depends: Drop versioned constraint on python3-all.
+
+  [ Sandro Tosi ]
+  * New upstream release
+  * debian/control
+    - replace b-d on dh-python with pybuild-plugin-pyproject
+    - add hatchling to b-d, needed by pyproject.toml
+    - add httpx to b-d, needed by tests
+    - drop requests from b-d, replaced by httpx
+
+ -- Sandro Tosi <morph@debian.org>  Fri, 09 Dec 2022 16:15:21 -0500
+
+starlette (0.20.4-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Thu, 15 Sep 2022 21:35:23 +0200
+
+starlette (0.18.0-1) unstable; urgency=medium
+
+  * New upstream release
+    - add python3-typing-extensions to Build-Depends
+    - GraphQL support removed
+
+ -- Piotr Ożarowski <piotr@debian.org>  Wed, 09 Feb 2022 17:35:18 +0100
+
+starlette (0.16.0-1) unstable; urgency=medium
+
+  [ Sandro Tosi ]
+  * Use the new Debian Python Team contact name and address
+
+  [ Piotr Ożarowski ]
+  * New upstream release
+  * Add python3-anyio to Build-Depends (used by tests)
+
+ -- Piotr Ożarowski <piotr@debian.org>  Tue, 17 Aug 2021 15:04:44 +0200
+
+starlette (0.14.1-1) unstable; urgency=medium
+
+  * New upstream release
+    - UJSONResponse no longer supported - python3-ujson removed from Recommends
+
+ -- Piotr Ożarowski <piotr@debian.org>  Thu, 12 Nov 2020 19:51:13 +0100
+
+starlette (0.13.8-1) unstable; urgency=low
+
+  [ Debian Janitor ]
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ Ondřej Nový ]
+  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
+    layout.
+
+  [ Piotr Ożarowski ]
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Thu, 24 Sep 2020 10:45:41 +0200
+
+starlette (0.13.7-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Tue, 11 Aug 2020 12:54:28 +0200
+
+starlette (0.13.4-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Sat, 02 May 2020 00:06:35 +0200
+
+starlette (0.13.3-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Piotr Ożarowski <piotr@debian.org>  Mon, 27 Apr 2020 14:44:24 +0200
+
+starlette (0.13.2-1) unstable; urgency=low
+
+  * Initial release (closes: 954102)
+
+ -- Piotr Ożarowski <piotr@debian.org>  Mon, 16 Mar 2020 18:07:04 +0000
