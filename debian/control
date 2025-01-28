@@ -1,8 +1,9 @@
 Source: starlette
 Section: python
 Priority: optional
-Maintainer: Piotr Ożarowski <piotr@debian.org>
-Uploaders: Debian Python Team <team+python@tracker.debian.org>
+Maintainer: Pexip AS <packaging@pexip.com>
+XSBC-Pexip-Original-Maintainer: Piotr Ożarowski <piotr@debian.org>
+XSBC-Pexip-Original-Uploaders: Debian Python Team <team+python@tracker.debian.org>
 Build-Depends: debhelper-compat (= 13),
                pybuild-plugin-pyproject,
                python3-all,
@@ -25,6 +26,7 @@ Homepage: https://www.starlette.io/
 Vcs-Git: https://salsa.debian.org/python-team/packages/starlette.git
 Vcs-Browser: https://salsa.debian.org/python-team/packages/starlette
 Testsuite: autopkgtest-pkg-pybuild
+XS-Pexip-Upstream: http://deb.debian.org/debian/ trixie
 
 Package: python3-starlette
 Architecture: all
