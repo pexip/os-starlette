@@ -1,0 +1,45 @@
+From: Bas Couwenberg <sebastic@debian.org>
+Date: Mon, 28 Jul 2025 11:40:09 +0200
+Subject: Fix test failures with older dependencies in testing.
+
+Bug-Debian: https://bugs.debian.org/1100087
+---
+ tests/middleware/test_wsgi.py | 2 +-
+ tests/test_requests.py        | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/tests/middleware/test_wsgi.py b/tests/middleware/test_wsgi.py
+index 3511c89..41fc0ae 100644
+--- a/tests/middleware/test_wsgi.py
++++ b/tests/middleware/test_wsgi.py
+@@ -78,7 +78,7 @@ def test_wsgi_post(test_client_factory: TestClientFactory) -> None:
+     client = test_client_factory(app)
+     response = client.post("/", json={"example": 123})
+     assert response.status_code == 200
+-    assert response.text == '{"example":123}'
++    assert response.text in ['{"example":123}', '{"example": 123}']
+ 
+ 
+ def test_wsgi_exception(test_client_factory: TestClientFactory) -> None:
+diff --git a/tests/test_requests.py b/tests/test_requests.py
+index 7e2c608..8f71d26 100644
+--- a/tests/test_requests.py
++++ b/tests/test_requests.py
+@@ -92,7 +92,7 @@ def test_request_body(test_client_factory: TestClientFactory) -> None:
+     assert response.json() == {"body": ""}
+ 
+     response = client.post("/", json={"a": "123"})
+-    assert response.json() == {"body": '{"a":"123"}'}
++    assert response.json() in [{"body": '{"a":"123"}'}, {'body': '{"a": "123"}'}]
+ 
+     response = client.post("/", data="abc")  # type: ignore
+     assert response.json() == {"body": "abc"}
+@@ -113,7 +113,7 @@ def test_request_stream(test_client_factory: TestClientFactory) -> None:
+     assert response.json() == {"body": ""}
+ 
+     response = client.post("/", json={"a": "123"})
+-    assert response.json() == {"body": '{"a":"123"}'}
++    assert response.json() in [{"body": '{"a":"123"}'}, {'body': '{"a": "123"}'}]
+ 
+     response = client.post("/", data="abc")  # type: ignore
+     assert response.json() == {"body": "abc"}
