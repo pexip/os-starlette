@@ -1,3 +1,4 @@
 json-format.patch
 0002-fix-cve-2024-28849-async-write.patch
 CVE-2025-62727.patch
+CVE-2026-48710.patch
